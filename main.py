@@ -28,7 +28,6 @@ def main():
             inquirer.Text(
                 "option",
                 message="Choose one of the above menu [1/2..]",
-                choices=[1, 2, 3, 4, 5, 6],
                 validate=lambda _, o: 0 < int(o) <= 6
             )
         ])
