@@ -263,7 +263,6 @@ def main():
             )
 
             if confirm:
-                print(index)
                 delete = contacts.remove_at_index(index)
 
                 if delete:
