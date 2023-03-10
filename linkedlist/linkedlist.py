@@ -84,6 +84,10 @@ class LinkedList:
         return temp
 
     def pop(self):
+        """
+            This method removes the last element from an array
+            and returns that removed element
+        """
         if self.length == 0:
             return None
 
@@ -143,6 +147,24 @@ class LinkedList:
         return False
 
     def insert_of_index(self, index, value):
+        """
+            This method insert the value at given index
+            (this method is equivalent as insert() method on the example)
+
+            Params
+            ----------
+
+            index: int
+                index of the value that want to be inserted
+            value: any
+                new value of the existing data at given index
+
+            Return
+            ----------
+
+            boolean
+                true when the node is inserted and false when the data at the given index cannot be found
+        """
         if index < 0 or index > self.length:
             return False
         if index == 0:
@@ -160,6 +182,24 @@ class LinkedList:
         return True
 
     def remove_at_index(self, index):
+        """
+            This method removes the element at the given index
+            (this method is equivalent as remove() method on the example)
+
+            Params
+            ----------
+
+            index: int
+                index of the element that want to be removed
+
+            Return
+            ----------
+
+            temp: Node
+                removed element
+
+            None(when the index is out of the range)
+        """
         if index < 0 or index >= self.length:
             return None
 
