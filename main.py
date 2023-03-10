@@ -11,8 +11,7 @@ def main():
     favorite_contacts = Contact()
 
     while True:
-        os.system("clear")  # Use os.system on Windows
-
+        os.system("clear")  # Use os.system("cls") on Windows
         print(pyfiglet.figlet_format("Contactify"))
         print("Welcome to Contactify: Your personal address book, perfected.")
 
@@ -24,20 +23,21 @@ def main():
         print("5. Add contact to favorite list")
         print("6. Update contact")
         print("7. Delete contact")
-        print("8. Run Seeder\n")
+        print("8. Run Seeder")
+        print("9. Exit\n")
 
         options = inquirer.prompt([
             inquirer.Text(
                 "option",
                 message="Choose one of the above menu [1/2..]",
-                validate=lambda _, o: 0 < int(o) <= 8
+                validate=lambda _, o: 0 < int(o) <= 9
             )
         ])
 
         options = int(options["option"])
 
         if options == 1:
-            os.system("clear")
+            os.system("clear")  # Use os.system("cls") on Windows
             allContacts = contacts.getAll()
 
             if len(allContacts) == 0:
@@ -55,7 +55,7 @@ def main():
                 print(table)
 
         elif options == 2:
-            os.system("clear")
+            os.system("clear")  # Use os.system("cls") on Windows
 
             params = inquirer.prompt([
                 inquirer.Text("name", message="Type the name")
@@ -83,7 +83,7 @@ def main():
             print(table)
 
         elif options == 3:
-            os.system("clear")
+            os.system("clear")  # Use os.system("cls") on Windows
             allFavoriteContacts = favorite_contacts.getAll()
 
             if len(allFavoriteContacts) == 0:
@@ -101,7 +101,7 @@ def main():
                 print(table)
 
         elif options == 4:
-            os.system("clear")
+            os.system("clear")  # Use os.system("cls") on Windows
 
             print("\nAdd new contact: ")
             contact = inquirer.prompt([
@@ -126,7 +126,7 @@ def main():
             print("Contact address was successfully created")
 
         elif options == 5:
-            os.system("clear")
+            os.system("clear")  # Use os.system("cls") on Windows
 
             params = inquirer.prompt([
                 inquirer.Text("name", message="Type the name")
@@ -170,7 +170,7 @@ def main():
                 print("Cancelled")
 
         elif options == 6:
-            os.system("clear")
+            os.system("clear")  # Use os.system("cls") on Windows
 
             params = inquirer.prompt([
                 inquirer.Text("name", message="Type the name")
@@ -230,7 +230,7 @@ def main():
                 print("Cancelled")
 
         elif options == 7:
-            os.system("clear")
+            os.system("clear")  # Use os.system("cls") on Windows
 
             params = inquirer.prompt([
                 inquirer.Text("name", message="Type the name")
@@ -276,6 +276,10 @@ def main():
         elif options == 8:
             contacts.seed()
             contacts.print_list()
+
+        elif options == 9:
+            print("Thank you for using this program. Bye!")
+            break
 
         input("Press any key to continue...")
 
